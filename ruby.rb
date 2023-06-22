@@ -40,8 +40,5 @@ people2 = Person.new('Duc', '30')
 
 puts Person.totalcount
 
-array = []
-age = Random.new
-20.times { |i| array.push(Person.new("Person #{i}", age.rand(1..90))) }
-puts array
+
 
