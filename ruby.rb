@@ -1,5 +1,6 @@
 class Person
   #   Constructor
+  attr_accessor :name, :age
   @@count = 0
 
   def initialize (name, age)
@@ -32,8 +33,12 @@ class Person
 
   def raise_error
     begin
-    rescue Exception1
-      puts " Error Exception1"
+      puts "Before the raise"
+      raise ArgumentError.new('HTD')
+    rescue ArgumentError => e
+      puts e.message
+    ensure
+      puts "Always execute"
     end
   end
 
@@ -84,14 +89,18 @@ a.each { |element| element.introduce }
 
 puts "Cau 15 ======>"
 
+array15 = a.each { |element| puts element.age }
+
 puts "Cau 16 =====>"
 
 people_2 = a
 array16 = a + people_2
 array16.each { |element| element.introduce }
 
-puts "Cau 17 =====>"
+puts "Cau 17 =====>>"
 a[0].raise_error
+
+
 
 
 
